@@ -1,4 +1,4 @@
-/* @ts-nocheck */
+// @ts-nocheck
 import { Action, ActionPanel, Detail, Icon } from "@raycast/api";
 import {
   brewIsInstalled,
