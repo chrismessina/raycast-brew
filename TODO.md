@@ -13,6 +13,9 @@
   - [ ] Add more descriptive error messages in `showFailureToast`
   - [ ] Add error context (command, parameters) to error logs
   - [ ] Consider adding retry logic for transient network errors in `fetchRemote`
+  - [ ] Create granular error types (network, parsing, brew command, etc.)
+  - [ ] Show retry options in UI for network failures
+  - [ ] Add React error boundaries for component-level error handling
 
 ## 🗂️ Caching & Performance
 
@@ -21,9 +24,12 @@
   - [ ] Add manual cache invalidation action
   - [ ] Consider using SQLite for faster queries (noted in `utils.ts` comments)
   - [ ] Add cache size monitoring/cleanup
+  - [ ] Simplify cache invalidation logic
 - [ ] Optimize search performance
   - [ ] Pre-compute lowercase names for faster filtering
   - [ ] Consider indexing for large formula/cask lists
+  - [ ] Increase search results limit (currently capped at 200)
+  - [ ] Add search debouncing to reduce unnecessary filtering
 
 ## 🏗️ Code Organization
 
@@ -35,8 +41,10 @@
     - [ ] `brew/search.ts` - search functionality
     - [ ] `brew/actions.ts` - install/uninstall/upgrade actions
     - [ ] `brew/utils.ts` - utility functions (brewName, brewIdentifier, etc.)
-  - [ ] Move global prototype extensions from `utils.ts` to separate file
+  - [ ] Remove global Array prototype extensions from `utils.ts` (replace with utility functions)
   - [ ] Consider extracting toast utilities to `components/toasts.ts`
+  - [ ] Break down long functions (e.g., `_fetchRemote`) into smaller, focused units
+  - [ ] Consider using React Query or SWR for better data fetching patterns
 
 ## 🤖 AI Tools
 
@@ -114,6 +122,8 @@
   - [ ] Add "Recently Updated" section
 - [ ] Add download progress HUD to show download % complete
 - [ ] Improve keyboard shortcuts for Actions
+- [ ] Improve loading states with more informative messages
+- [ ] Add helpful empty states with actionable suggestions
 
 ## 🐛 Bug Fixes
 
@@ -122,6 +132,16 @@
   - [ ] Update `brewQuarantineOption()` in `brew.ts` to handle deprecation
   - [ ] Consider removing the preference if no longer applicable
 - [ ] Fix typo: `pinned_vesion` should be `pinned_version` in `OutdatedFormula` interface
+
+## 🧪 Code Quality & Testing
+
+- [ ] Enable stricter TypeScript settings
+  - [ ] Remove `any` types where possible
+  - [ ] Add explicit return types to functions
+- [ ] Add unit tests for critical business logic
+  - [ ] Test search and filtering functions
+  - [ ] Test cache invalidation logic
+  - [ ] Test brew command parsing
 
 ## 📚 Documentation
 
